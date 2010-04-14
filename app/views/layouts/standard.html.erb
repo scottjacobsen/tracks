@@ -5,7 +5,6 @@
     <% if @prefs.refresh != 0 -%>
       <meta http-equiv="Refresh" content="<%= @prefs["refresh"].to_i*60 %>;url=<%= request.request_uri %>">
     <% end -%>
-  <% bundle do %>
     <%= javascript_include_tag *%w[
                                     prototype effects dragdrop controls application
                                     calendar calendar-en calendar-setup
@@ -13,7 +12,6 @@
                                     protoload flashobject lowpro
                                   ] %>
     <%= stylesheet_link_tag *%w[ standard calendar-system niftyCorners] %>
-  <% end %>
   <%= javascript_include_tag :unobtrusive %>
   <%= stylesheet_link_tag "print", :media => "print" %>
   
